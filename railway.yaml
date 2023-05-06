@@ -1,0 +1,14 @@
+services:
+  web:
+    image: 'php:8.2.0-apache'
+    build:
+      context: '.'
+    start: 'apache2-foreground'
+    ports:
+      - '80'
+    environment:
+      - MYSQL_HOST
+      - MYSQL_PORT
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+      - MYSQL_DATABASE
